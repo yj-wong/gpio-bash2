@@ -1,19 +1,25 @@
 #!/bin/bash
 
-gpio mode 5 up
+echo() { :; }
+
+n=10
+gpio mode $n up
 
 button=1
 
 while [ $button -eq 1 ]
 do
-  button=$(gpio read 5)
+	echo button is $button
+  button=$(gpio read $n)
 
   while [ $button -eq 0 ]
   do
-    button=$(gpio read 5)
+		echo button is $button
+    button=$(gpio read $n)
 
     if [ $button -eq 1 ]
     then
+				echo "exit"
         exit 0
     fi
   done

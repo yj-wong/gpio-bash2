@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Comment the line below to enable echo.
 echo() { :; }
 
 n=10
